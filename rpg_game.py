@@ -49,7 +49,7 @@ while True:
     print(f'Você está na sala: {actual_step}')
     print('Escolha seu caminho:')
     possible_paths = game_paths[actual_step]
-    paths = possible_paths.keys()
+    paths = list(possible_paths.keys())
     for path_index in range(len(paths)):
         print(f'[{path_index + 1}] - Caminho {paths[path_index]}')
     response = int(input())
