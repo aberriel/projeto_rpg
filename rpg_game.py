@@ -71,7 +71,7 @@ while True:
             print('Uma pedra gigante esmagou sua guilda :(')
             break
         
-        print(f'Você está na salão: {actual_step}')
+        print(f'Você está no salão: {actual_step}')
         print(room_joke[actual_step])
         print('Escolha seu caminho:')
         possible_paths = game_paths[actual_step]
