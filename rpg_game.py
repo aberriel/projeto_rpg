@@ -58,26 +58,46 @@ room_joke = {
 
 }
 
-actual_step = 1
-step_count = 0
-
 while True:
-    if actual_step == 9:
-        print('Encontramos o Loot Lendário!!! :D ')
+    actual_step = 1
+    step_count = 0
+
+
+    while True:
+        if actual_step == 9:
+            print('Encontramos o Loot Lendário!!! :D ')
+            break
+        elif step_count >= 7:
+            print('Uma pedra gigante esmagou sua guilda :(')
+            break
+        
+        print(f'Você está na salão: {actual_step}')
+        print(room_joke[actual_step])
+        print('Escolha seu caminho:')
+        possible_paths = game_paths[actual_step]
+        paths = list(possible_paths.keys())
+        for path_index in range(len(paths)):
+            print(f'[{path_index + 1}] - Ir por {paths[path_index]}')
+        response = int(input())
+        
+        next_step_name = list(paths)[response - 1]
+        actual_step = possible_paths[next_step_name]
+        step_count = step_count + 1
+        
+    new_game = int(input('Você deseja iniciar uma nova aventura? \n [1] Pra sim \n [2] Pra não \n '))
+    if new_game == 2:
         break
-    elif step_count >= 7:
-        print('Uma pedra gigante esmagou sua guilda :(')
-        break
+    else:
+        print('Você é o bixão mesmo em doido!!')
+
+        
+print('Obrigado pela sua jogatina!!!')
+print('Créditos:')
+print('Anselmo Lira !')
+print('Lucas Gianizelli !')
+print('Gustavo Batista !')
+print('Fábio Giannini !')
+print('Isaac Gouveia !')
+
+                                                
     
-    print(f'Você está na salão: {actual_step}')
-    print(room_joke[actual_step])
-    print('Escolha seu caminho:')
-    possible_paths = game_paths[actual_step]
-    paths = list(possible_paths.keys())
-    for path_index in range(len(paths)):
-        print(f'[{path_index + 1}] - Ir por {paths[path_index]}')
-    response = int(input())
-    
-    next_step_name = list(paths)[response - 1]
-    actual_step = possible_paths[next_step_name]
-    step_count = step_count + 1
